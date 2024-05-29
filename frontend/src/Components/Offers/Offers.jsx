@@ -1,7 +1,7 @@
 import React from "react";
 import "./Offers.css";
-import "../../../src/Data/offersData.js";
-import { offersData } from "../../../src/Data/offersData.js";
+import "../../Data/offersData.js";
+import { offersData } from "../../Data/offersData.js";
 
 const Offers = () => {
   return (
@@ -26,7 +26,6 @@ const Offers = () => {
               ))}
             </div>
             <div>
-              
               <span>See more benefits</span>
             </div>
             <button className="btn">Join now</button>
