@@ -1,0 +1,23 @@
+:root {
+--orange:#f48915;
+--blue:#004f80
+
+}
+.stroke-text{
+  color:transparent;
+  font-family: Arial, Helvetica, sans-serif;
+  -webkit-text-stroke-width:1px;
+  -webkit-text-stroke-color:purple;
+
+}
+.btn{
+  background-color: var(--orange);
+  padding: 0.5rem;
+  font-weight: 4px solid transparent ;
+  transition:300ms  all;
+  display: flex;
+  justify-content: center;
+}
+.btn:hover{
+  cursor:pointer
+}

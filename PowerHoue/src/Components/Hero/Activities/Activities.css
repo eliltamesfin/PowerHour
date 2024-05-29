@@ -1,0 +1,53 @@
+.activities{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 0 2rem;
+}
+.activities-header{
+    display: flex;
+    gap: 5rem;
+    font-weight: bold;
+    font-size: 3rem;
+    justify-content:center ;
+    text-transform: uppercase;
+    font-style: italic;
+    padding-top: 8rem;
+
+}
+.activities-boxes{
+    display: flex;
+    
+    gap: 1rem;
+    justify-content: center;
+    
+}
+.activities-boxes>div{
+    width: 20rem;
+    height: 16rem;
+    border: 0.2rem black solid;
+    display: flex;
+ flex-direction: column;
+ background-color: blanchedalmond;
+ padding: 2rem;
+ gap: 1rem;
+ justify-content: space-between;
+ font-weight: bold;
+ font-size:0.9rem;
+ line-height: 25px;
+
+}
+
+.join-now{
+    display: flex;
+    line-height: 25px;
+    gap: 2rem;
+}
+
+.right-arrow{
+    width: 1rem;
+}
+.activities-boxes>div:hover{
+    background-color: pink;
+    cursor: pointer;
+}

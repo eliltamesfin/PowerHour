@@ -1,0 +1,30 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+.logo {
+  width: 4rem;
+  height: 4rem;
+}
+.boxLogo{
+    display: flex;
+    flex-direction: column;
+}
+.left-h {
+  padding: 2rem;
+  padding-top: 1.5rem;
+  flex: 3;
+}
+.header-menu {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+.right-h {
+  flex: 1;
+}
+
+.header-menu > li:hover {
+  color: var(--orange);
+  cursor: pointer;
+}
