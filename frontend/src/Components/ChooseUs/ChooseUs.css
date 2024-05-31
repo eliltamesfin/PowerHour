@@ -56,3 +56,8 @@
     font-size: 3rem;
     font-weight: bold;
 }
+.text-right{
+    text-align: justify;
+    text-transform: none;
+    line-height: 1.5rem;
+}
