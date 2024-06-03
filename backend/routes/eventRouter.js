@@ -4,13 +4,16 @@ import {
     getAllEvents,
     updateEventById,
     deleteEventById,} from "../controllers/eventController.js";
+    import {isAuth} from "../middlewares/isAuth.js";
+    import {isTrainer} from "../middlewares/isTrainer.js";
+import { isEmployee } from "../middlewares/isEmployee.js";
 
 const router = Router();
 
-router.post("/", postNewEvent);
-router.get("/", getAllEvents);
+router.post("/", isAuth, isTrainer, postNewEvent);
+router.get("/", isAuth, getAllEvents);
 // router.get("/event/:id", getEventById);
-router.put("/:id", updateEventById);
-router.delete("/:id", deleteEventById);
+router.put("/:id", isAuth, isEmployee, updateEventById);
+router.delete("/:id", isAuth, isEmployee, deleteEventById);
 
 export default router

@@ -5,7 +5,8 @@ const { JWT_SECRET } = process.env;
 
 const isAuth = asyncHandler(async (req, res, next) => {
   // Extract the token from the cookie
-  const token = req.cookies.token;  
+  console.log(req.cookies);
+  const token = req.cookies.token;
 
   if (!token) {
     res.status(401).json({ message: "Not Authenticated" });

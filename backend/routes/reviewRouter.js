@@ -5,12 +5,14 @@ import {
   updateReviewById,
   deleteReviewById,
 } from "../controllers/reviewController.js";
+import { isAuth } from "../middlewares/isAuth.js";
+import { isEmployee } from "../middlewares/isEmployee.js";
 
 const router = Router();
 
-router.post("/", postNewReview);
-router.get("/", getAllReviews);
-router.put("/:id", updateReviewById);
-router.delete("/:id", deleteReviewById);
+router.post("/", isAuth, postNewReview);
+router.get("/", isAuth, isEmployee, getAllReviews);
+router.put("/:id", isAuth, isEmployee, updateReviewById);
+router.delete("/:id", isAuth, isEmployee, deleteReviewById);
 
 export default router;

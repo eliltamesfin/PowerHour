@@ -4,11 +4,14 @@ import {
   getAllBookings,
   cancelBookingById,
 } from "../controllers/bookingController.js";
+import { isAuth } from "../middlewares/isAuth.js";
+import { isTrainer } from "../middlewares/isTrainer.js";
+import { isEmployee } from "../middlewares/isEmployee.js";
 
 const router = Router();
 
-router.post("/", postBooking);
-router.get("/", getAllBookings);
-router.delete("/:id", cancelBookingById);
+router.post("/", isAuth, postBooking);
+router.get("/", isAuth, isEmployee, getAllBookings);
+router.delete("/:id", isAuth, isTrainer, cancelBookingById);
 
 export default router;

@@ -4,11 +4,13 @@ import{
     getAllContacts,
     getContactById
 } from "../controllers/contactController.js";
+import {isAuth} from "../middlewares/isAuth.js";
+import {isAdmin} from "../middlewares/isAdmin.js";
 
 const router = Router();
 
-router.post("/", postNewContact);
-router.get("/", getAllContacts);
-router.get("/:id", getContactById);
+router.post("/",isAuth, postNewContact);
+router.get("/", isAuth, isAdmin, getAllContacts);
+router.get("/:id", isAuth, isAdmin, getContactById);
 
 export default router;

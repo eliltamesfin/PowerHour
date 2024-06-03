@@ -10,7 +10,7 @@ const { PORT } = process.env;
 
 const signup = asyncHandler(async (req, res) => {
   try {
-    const { firstName, lastName, email, password } = req.body;
+    const { firstName, lastName, email, password, age, telephone,address } = req.body;
 
     // Check if the user already exists
     const existingUser = await User.findOne({ email });
@@ -28,6 +28,9 @@ const signup = asyncHandler(async (req, res) => {
       firstName,
       lastName,
       email,
+      age,
+      telephone,
+      address,
       password: hashedPassword,
     });
 
@@ -150,42 +153,42 @@ const logout = asyncHandler(async (req, res) => {
   res.status(200).json({ message: "Logout successful" });
 });
 
-const postNewUser = async (req, res) => {
-  try {
-    const {
-      firstName,
-      lastName,
-      age,
-      email,
-      password,
-      telephone,
-      role,
-      picture,
-      address,
-      trainerType,
-      trainerDescription,
-    } = req.body;
-    const newUser = new User({
-      firstName,
-      lastName,
-      age,
-      email,
-      password,
-      telephone,
-      role,
-      picture,
-      address,
-      trainerType,
-      trainerDescription,
-    });
-    await newUser.save();
-    res.json(newUser);
-  } catch (error) {
-    res
-      .status(500)
-      .json({ error: "Error saving user", details: error.message });
-  }
-};
+// const postNewUser = async (req, res) => {
+//   try {
+//     const {
+//       firstName,
+//       lastName,
+//       age,
+//       email,
+//       password,
+//       telephone,
+//       role,
+//       picture,
+//       address,
+//       trainerType,
+//       trainerDescription,
+//     } = req.body;
+//     const newUser = new User({
+//       firstName,
+//       lastName,
+//       age,
+//       email,
+//       password,
+//       telephone,
+//       role,
+//       picture,
+//       address,
+//       trainerType,
+//       trainerDescription,
+//     });
+//     await newUser.save();
+//     res.json(newUser);
+//   } catch (error) {
+//     res
+//       .status(500)
+//       .json({ error: "Error saving user", details: error.message });
+//   }
+// };
 
 const getAllUsers = async (req, res) => {
   try {
@@ -280,7 +283,8 @@ export {
   verifyToken,
   login,
   getProtected,
-  postNewUser,
+  logout,
+  // postNewUser,
   getAllUsers,
   getUserById,
   updateUserById,

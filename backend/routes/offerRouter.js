@@ -5,14 +5,16 @@ import {
     updateOfferById,
     deleteOfferById,
 } from "../controllers/offerController.js";
+import {isAdmin} from "../middlewares/isAdmin.js";
+import {isAuth} from "../middlewares/isAuth.js";
 
 const router = Router();
 
 
-router.post("/", postNewOffer);
-router.get("/", getAllOffers);
+router.post("/", isAuth, isAdmin, postNewOffer);
+router.get("/", isAuth, getAllOffers);
 // router.get("/offer/:id", getOfferById);
-router.put("/:id", updateOfferById);
-router.delete("/:id", deleteOfferById);
+router.put("/:id", isAuth, isAdmin, updateOfferById);
+router.delete("/:id", isAuth, isAdmin, deleteOfferById);
 
 export default router
