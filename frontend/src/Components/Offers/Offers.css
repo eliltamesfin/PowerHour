@@ -67,4 +67,12 @@
 .offers>:nth-child(2)>button{
     color: var(--blue);
 }
+@media screen and (max-width: 768px) {
+.offers{
+  flex-direction: column;
+ 
+}.offer:nth-child(2){
+  transform: none;
+}
 
+}

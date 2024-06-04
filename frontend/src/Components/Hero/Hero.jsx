@@ -5,7 +5,7 @@ import HeroPic from "../../assets/heroPic.jpg";
 
 const Hero = () => {
   return (
-    <div className="hero">
+    <div className="hero" id="home">
       <div className="left-h">
         <Header />
         <div className="hero-text">

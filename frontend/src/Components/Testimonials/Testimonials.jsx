@@ -37,7 +37,8 @@ const Testimonials = () => {
   }} 
   className="left-Arrow" src={leftArrow} alt="" /*it will always revert to previous testimonial review ex:for instants if we are in the first review then it will return to last testimony on clicking the on previous button.And if not it means it is not the first */
 />
-          <img className="right-Arrow" src={rightArrow} alt="" />
+          <img  onClick={()=>{selected === tData-1
+            ? setSelected(0): setSelected((prev) => prev+1)}} className="right-Arrow" src={rightArrow} alt="" />
         </div>
       </div>
     </div>
