@@ -16,7 +16,7 @@ const ChooseUs = () => {
       </div>
       <div className="right-r">
         <span>some reason</span>
-        <div>
+        <div >
           <span className="stroke-text">why</span>
           <span> PowerHour?</span>
         </div>

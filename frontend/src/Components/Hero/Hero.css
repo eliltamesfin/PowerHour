@@ -66,3 +66,36 @@ right: 3rem;top: 2rem;color: var(--blue);
     top: 10rem;
     width: 23rem;
 }
+@media screen  and (max-width:768px)
+{
+   .hero {
+    flex-direction: column;
+    background-color: antiquewhite;
+   }
+
+.hero-text{
+
+    font-size: xx-large;
+    align-items: center;
+}
+.hero-button{
+    justify-content: center;
+}
+.figures >div>span:nth-of-type(1){
+font-size: large;
+}
+.figures >div>span:nth-of-type(2){
+    font-size: small;
+    }
+    .right-h{
+        position: relative;
+        background: none;
+    }
+    .hero-image{
+        position: relative;
+        width: 15rem;
+        left: 7rem;
+        top: 4rem;
+        align-self: center;
+    }
+} 
