@@ -1,9 +1,25 @@
 import React from "react";
 import "./Offers.css";
-import "../../Data/offersData.js";
-import { offersData } from "../../Data/offersData.js";
+import axios from "axios";
+import { useEffect, useState } from "react";
 
 const Offers = () => {
+  const [offers, setOffers] = useState([]);
+  useEffect(() => {
+    const fetchOffers = async () => {
+      try {
+        const response = await axios.get("http://localhost:7000/offer");
+        console.log(response)
+        const { data } = response;
+        console.log(data);
+        setOffers(data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetchOffers();
+  }, []);
+
   return (
     <div className="offers-container">
       <div className="programs-header">
@@ -14,17 +30,13 @@ const Offers = () => {
 
       {/*Offers card*/}
       <div className="offers">
-        {offersData.map((plan, i) => (
+        {offers.map((offer, i) => (
           <div className="offer" key={i}>
-            <span>{plan.name}</span>
-            <span>{plan.price}</span>
-            <div className="features">
-              {plan.features.map((feature, i) => (
-                <div className="feature">
-                  <span key={i}>{feature}</span>
-                </div>
-              ))}
-            </div>
+            <span>{offer.title}</span>
+            <span>{offer.description}</span>
+            <div> {offer.date}</div>
+            <div> {offer.duration}</div>
+
             <div>
               <span>See more benefits</span>
             </div>
