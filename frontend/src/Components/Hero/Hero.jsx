@@ -38,7 +38,7 @@ const Hero = () => {
         </div>
       </div>
       <div className="right-h">
-  <button className="btn">Join Now</button>
+
 
   {/*hero image */}
   <img src={HeroPic} alt="" className="hero-image"/>
