@@ -1,9 +1,10 @@
 import React from "react";
 import "./Activities.css";
 import RightArrow from "../../../assets/right-arrow.png";
+
 const Activities = () => {
   return (
-    <div className="activities" id="activities">
+    <div className="activities" id="programs">
       <div className="activities-header">
         <span className="stroke-text">Explore our</span>
         <span> Programs</span>
@@ -11,7 +12,6 @@ const Activities = () => {
       </div>
       <div className="activities-boxes">
         <div className="yoga">
-         
           <div>Yoga</div>
           <p>
             Yoga is a holistic practice that combines physical postures,
@@ -24,26 +24,23 @@ const Activities = () => {
           </div>
         </div>
         <div className="pilates">
-          {" "}
           Pilates
           <p>
             Pilates is a low-impact exercise system that focuses on
             strengthening core muscles, improving posture, and enhancing overall
-            body flexibility.{" "}
+            body flexibility.
           </p>
           <div className="join-now">
             <span>Join Now</span>
             <img className="right-arrow" src={RightArrow} alt="" />
           </div>
         </div>
-
-        <div className="Cardio">
-          
+        <div className="cardio">
           Cardio
           <p>
             Cardio, or cardiovascular exercise, involves activities that raise
             your heart rate and improve the efficiency of your heart, lungs, and
-            circulatory system. health.
+            circulatory system.
           </p>
           <div className="join-now">
             <span>Join Now</span>
