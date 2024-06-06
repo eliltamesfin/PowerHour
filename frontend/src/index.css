@@ -1,6 +1,8 @@
 :root {
 --orange:#f48915;
---blue:#004f80
+--blue:#004f80;
+
+
 
 }
 .stroke-text{
@@ -11,12 +13,13 @@
 
 }
 .btn{
-  background-color: var(--orange);
+  background-color: var(--blue);
   padding: 0.5rem;
   font-weight: 4px solid transparent ;
   transition:300ms  all;
   display: flex;
   justify-content: center;
+  color: aliceblue;
 }
 .btn:hover{
   cursor:pointer

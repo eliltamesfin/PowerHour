@@ -66,6 +66,7 @@ right: 3rem;top: 2rem;color: var(--blue);
     top: 10rem;
     width: 23rem;
 }
+
 @media screen  and (max-width:768px)
 {
    .hero {
