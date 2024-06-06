@@ -1,73 +1,56 @@
-.activities{
+.activities {
     display: flex;
     flex-direction: column;
     gap: 2rem;
     padding: 0 2rem;
-}
-.activities-header{
+  }
+  
+  .activities-header {
     display: flex;
     gap: 5rem;
     font-weight: bold;
     font-size: 3rem;
-    justify-content:center ;
+    justify-content: center;
     text-transform: uppercase;
     font-style: italic;
     padding-top: 8rem;
-
-}
-.activities-boxes{
+  }
+  
+  .activities-boxes {
     display: flex;
-    
     gap: 1rem;
     justify-content: center;
-    
-}
-.activities-boxes>div{
+  }
+  
+  .activities-boxes > div {
     width: 20rem;
     height: 16rem;
     border: 0.2rem black solid;
     display: flex;
- flex-direction: column;
- background-color: blanchedalmond;
- padding: 2rem;
- gap: 1rem;
- justify-content: space-between;
- font-weight: bold;
- font-size:0.9rem;
- line-height: 25px;
-
-}
-
-.join-now{
+    flex-direction: column;
+    background-color: blanchedalmond;
+    padding: 2rem;
+    gap: 1rem;
+    justify-content: space-between;
+    font-weight: bold;
+    font-size: 0.9rem;
+    line-height: 25px;
+    transition: transform 0.3s ease; /* For smooth hover effect */
+  }
+  
+  .join-now {
     display: flex;
     line-height: 25px;
     gap: 2rem;
-}
-
-.right-arrow{
+  }
+  
+  .right-arrow {
     width: 1rem;
-}
-.activities-boxes>div:hover{
+  }
+  
+  .activities-boxes > div:hover {
     background-color: pink;
     cursor: pointer;
-}
-@media screen and (max-width:768px) {
-   .activities-header{
-    flex-direction: column;
-    gap: 1rem;
-    font-size: x-large;
-    align-items: center;
-    justify-content: center;
-    margin-top: 2rem;
-   } 
-   .activities-boxes{
-    flex-direction: column;
-   
-    
-   }.activities-boxes>div{
-    width: 10rem;
-   }
-   .activities{
-    background-color: antiquewhite;
-   }
-}
+    transform: scale(1.05); /* Slightly enlarge on hover */
+  }
+  
