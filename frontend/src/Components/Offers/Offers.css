@@ -26,33 +26,38 @@
 .offer {
   display: flex;
   flex-direction: column;
-  background-color: pink;
+  background-color: #C4C8BB;
   gap: 2rem;
   width: 15rem;
   padding: 1.5rem;
   font-weight: bold;
 }
+.offer>:nth-child(1){
+  font-size: 40px;
+  padding-top: 2rem;
+}
 .offer:nth-child(2) {
-  background-color: blueviolet;
+  background-color: var(--orange) ;
   transform: scale(1.1);
   font-size: 1rem;
   font-weight: bold;
+ 
 }
 .offer > :nth-child(2) {
-  font-size: 2rem;
-  font-weight: bold;
-  color: red;
+  font-size: 1rem;
+  font-weight: 100px;
+  
 }
 
 .offer > :nth-child(3) {
   font-size: 1.5rem;
   font-weight: bold;
-  color: aqua;
+color: var(--blue);
 }
 .offer > :nth-child(4) {
   font-size: 1rem;
   font-weight: bold;
-  color: yellowgreen;
+  color: green;
 }
 .features {
   display: flex;
@@ -65,7 +70,7 @@
   gap: 1rem;
 }
 .offers>:nth-child(2)>button{
-    color: var(--blue);
+    color: var(--orange);
 }
 @media screen and (max-width: 768px) {
 .offers{

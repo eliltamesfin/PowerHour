@@ -33,8 +33,8 @@ const Header = () => {
         ) : (
           <ul className="header-menu">
             <li onClick={() => setMenuOpened(false)}> Home</li>
-            <li onClick={() => setMenuOpened(false)}>Programs</li>
-            <li onClick={() => setMenuOpened(false)}>Why us</li>
+            <li onClick={() => setMenuOpened(false)}>Trainers</li>
+            <li onClick={() => setMenuOpened(false)}>About us</li>
             <li onClick={() => setMenuOpened(false)}>Plans</li>
             <li onClick={() => setMenuOpened(false)}>Testimonials</li>
           </ul>
