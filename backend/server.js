@@ -1,6 +1,7 @@
 import express from "express";
 import connectDB from "./config/connectDB.js";
 import colors from "colors";
+import cors from "cors";
 import { errorHandler } from "./middlewares/errorHandler.js";
 import offerRouter from "./routes/offerRouter.js";
 import courseRouter from "./routes/courseRouter.js";
@@ -10,6 +11,7 @@ import contactRouter from "./routes/contactRouter.js";
 import bookingRouter from "./routes/bookingRouter.js";
 import userRouter from "./routes/userRouter.js";
 import cookieParser from "cookie-parser";
+import offer from "mongoose";
 
 const app = express();
 const { PORT } = process.env;
@@ -17,6 +19,7 @@ const { PORT } = process.env;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cookieParser());
+app.use(cors());
 
 await connectDB();
 

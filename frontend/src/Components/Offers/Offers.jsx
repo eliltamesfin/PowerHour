@@ -1,9 +1,24 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 import "./Offers.css";
-import "../../Data/offersData.js";
-import { offersData } from "../../Data/offersData.js";
 
 const Offers = () => {
+  const [offers, setOffers] = useState([]);
+
+  useEffect(() => {
+    const fetchOffers = async () => {
+      try {
+        const response = await axios.get("http://localhost:7000/offer");
+        const { data } = response;
+        console.log(data);
+        setOffers(data);
+      } catch (error) {
+        console.error("Error fetching offers:", error);
+      }
+    };
+    fetchOffers();
+  }, []);
+
   return (
     <div className="offers-container">
       <div className="programs-header">
@@ -12,19 +27,14 @@ const Offers = () => {
         <span className="stroke-text">NOW WITH US</span>
       </div>
 
-      {/*Offers card*/}
+      {/* Offers card */}
       <div className="offers">
-        {offersData.map((plan, i) => (
+        {offers.map((offer, i) => (
           <div className="offer" key={i}>
-            <span>{plan.name}</span>
-            <span>{plan.price}</span>
-            <div className="features">
-              {plan.features.map((feature, i) => (
-                <div className="feature">
-                  <span key={i}>{feature}</span>
-                </div>
-              ))}
-            </div>
+            <span className="offer-title">{offer.title}</span>
+            <span className="offer-description">{offer.description}</span>
+            <span className="offer-date">Date: {new Date(offer.date).toLocaleDateString()}</span>
+            <span className="offer-duration">Duration: {offer.duration} hours</span>
             <div>
               <span>See more benefits</span>
             </div>
@@ -37,3 +47,5 @@ const Offers = () => {
 };
 
 export default Offers;
+
+

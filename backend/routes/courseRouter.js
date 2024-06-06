@@ -12,7 +12,7 @@ import {isEmployee} from "../middlewares/isEmployee.js";
 const router = Router();
 
 router.post("/", isAuth, isTrainer, postNewCourse);
-router.get("/", isAuth, isEmployee, getAllCourses);
+router.get("/", isAuth, getAllCourses);
 // router.get("/course/:id", getCourseById);
 router.put("/:id", isAuth, isEmployee, updateCourseById);
 router.delete("/:id", isAuth, isEmployee, deleteCourseById);

@@ -11,8 +11,12 @@ const postNewEvent = async (req, res) => {
       capacity,
       date,
     });
-
+ const existingEvent = await Event.findOne({ title });
+    if(existingEvent) {
+      return res.status(400).json({ error: 'The Event with the same title already exists' });
+    }
     await newEvent.save();
+    res.status(201).json({message: 'Event created successfully', event: newEvent});
     res.json(newEvent);
   } catch (error) {
     res.status(500).json({ error: 'Error saving event', details: error.message });

@@ -24,7 +24,7 @@ router.post("/logout", isAuth, logout);
 // router.post("/", postNewUser);
 router.get("/", isAuth, isAdmin, getAllUsers);
 router.get("/:id",isAuth, isAdmin, getUserById);
-router.put("/:id", isAuth, isAdmin, updateUserById);
+router.put("/:id", isAuth, updateUserById);
 router.delete("/:id", isAuth, isAdmin, deleteUserById);
 
 export default router;
