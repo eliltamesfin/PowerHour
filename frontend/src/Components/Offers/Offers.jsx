@@ -4,16 +4,16 @@ import "./Offers.css";
 
 const Offers = () => {
   const [offers, setOffers] = useState([]);
-
   useEffect(() => {
     const fetchOffers = async () => {
       try {
         const response = await axios.get("http://localhost:7000/offer");
+        console.log(response)
         const { data } = response;
         console.log(data);
         setOffers(data);
       } catch (error) {
-        console.error("Error fetching offers:", error);
+        console.log(error);
       }
     };
     fetchOffers();
@@ -31,10 +31,11 @@ const Offers = () => {
       <div className="offers">
         {offers.map((offer, i) => (
           <div className="offer" key={i}>
-            <span className="offer-title">{offer.title}</span>
-            <span className="offer-description">{offer.description}</span>
-            <span className="offer-date">Date: {new Date(offer.date).toLocaleDateString()}</span>
-            <span className="offer-duration">Duration: {offer.duration} hours</span>
+            <span>{offer.title}</span>
+            <span>{offer.description}</span>
+            <div> {offer.date}</div>
+            <div> {offer.duration}</div>
+
             <div>
               <span>See more benefits</span>
             </div>
