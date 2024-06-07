@@ -16,7 +16,7 @@
   flex-direction: column;
   gap: 4rem;
   position: relative;
-  line-height: 2rem;
+  /* line-height: 2rem; */
 }
 
 .offers {
@@ -29,36 +29,56 @@
 .offer {
   display: flex;
   flex-direction: column;
-  background-color: #C4C8BB;
+  background-color: #FFCC00;
   gap: 2rem;
-  width: 15rem;
+  width: 25rem;
   padding: 1.5rem;
   font-weight: bold;
   cursor: pointer; /* Indicate clickability */
   transition: transform 0.3s ease; /* Smooth transition for scaling */
 }
-.offer>:nth-child(1){
-  font-size: 40px;
-  padding-top: 2rem;
+.deadline {
+  font-size: 1rem;
+  font-weight: lighter;
+}
+.deadline-date {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--blue);
+}
+.activity-name{
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--blue);
 }
 .offer:nth-child(2) {
-  background-color: var(--orange) ;
+  background-color: #FFCC00;
   transform: scale(1.1);
   font-size: 1rem;
   font-weight: bold;
  
 }
 
-.offer > :nth-child(2) {
-  font-size: 1rem;
-  font-weight: 100px;
-  
+.offer-season{
+  font-size: 2rem;
+  font-weight: bold;
+}
+.title-price{
+ display: flex;
+ flex-direction: row ;
+  justify-content: space-between;
+}
+.monthly-price{
+  font-size: 2rem;
+  font-weight: bold;;
 }
 
 .offer > :nth-child(3) {
-  font-size: 1.5rem;
-  font-weight: bold;
-color: var(--blue);
+  font-size: 1rem;
+  /* font-weight: bold; */
+  border-bottom: 1px solid black;
+  padding-bottom: 0.5rem;
+
 }
 
 .offer > :nth-child(4) {
