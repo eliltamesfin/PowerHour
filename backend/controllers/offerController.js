@@ -2,8 +2,8 @@ import Offer from "../models/offer.js";
 
 const postNewOffer = async (req, res) => {
   try {
-    const { title, description, picture, date, duration } = req.body;
-    const newOffer = new Offer({ title, description, picture, date, duration });
+    const { season, activity, deadline, monthlyPrice, duration } = req.body;
+    const newOffer = new Offer({ season, activity, deadline, monthlyPrice, duration });
     await newOffer.save();
     res.json(newOffer);
   } catch (error) {
